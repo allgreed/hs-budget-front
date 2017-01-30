@@ -1,0 +1,53 @@
+@import 'bootstrap/mixins';
+
+//************************
+// Responsive mixins
+//************************
+
+  @mixin phone {
+    @media (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+
+  @mixin desktop {
+    @media (min-width: $screen-lg) {
+      @content;
+    }
+  }
+
+//************************
+// Helper mixins
+//************************
+
+  //Flex - vertical center
+  @mixin flex-vc {
+    	display: flex;
+      align-items: center;
+  }
+
+//************************
+// Type mixins
+//************************
+
+// Mixin for setting type scale and line height
+// See _type.scss for more info
+
+@mixin type($level: 0){
+  font-size: desktop-type-scale($level);
+  line-height: line-height($level);
+}
+
+//************************
+// General mixins
+//************************
+
+@mixin bgimg($url, $fallback) {
+  background: $fallback get-img($url) no-repeat center;
+  background-size: cover; 
+}
+
+//************************
+// Specific mixin
+//************************
+

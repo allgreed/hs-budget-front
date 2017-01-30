@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+<FilesMatch "\.(htm|html|php)$">
+  <IfModule mod_headers.c>
+      BrowserMatch MSIE ie
+      Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
+  </IfModule>
+</FilesMatch>
+
+<ifModule mod_expires.c>
+  Header set Cache-Control "max-age=31536000"
+</ifModule>

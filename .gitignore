@@ -1,0 +1,38 @@
+####################################
+# Common ignores 
+####################################
+
+# packages
+node_modules
+bower_components
+
+# folders compiled from source
+dist
+dev
+
+# Macbook storage file
+*.DS_Store
+.DS_Store
+
+# others
+.tmp
+
+####################################
+# Project specific files / folders 
+####################################
+
+#ftp passwords
+ftp_keys.json
+# Shall be removed after moving to a self-hosted repos
+
+#cache-busting manifest
+assets.json
+
+####################################
+# Custom ignores
+####################################
+
+# fonts
+# Uncomment line above to not include fonts
+# Usefull when font license prohibits from adding fonts to the repo
+# Shall be removed after moving to a self-hosted repos

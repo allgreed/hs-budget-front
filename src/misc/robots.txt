@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow:
+
+Sitemap: http://hs3.pl/budget//sitemap.xml

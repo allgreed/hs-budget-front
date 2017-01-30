@@ -1,0 +1,57 @@
+//************************
+// Basic type setting
+//************************
+
+$font-family-base: 'VisbyCF', "Lucida Grande", sans-serif;
+$font-size-base: 100%;
+$font-weight-base: 400;
+$font-style-base: normal;
+
+//************************
+// Type scale
+//************************
+
+// Modular scale for further use
+
+$_modular-scale: (
+-1: 0.729rem,
+ 0: 0.875rem, //14 px
+ 1: 1.05rem, //16.8
+ 2: 1.26rem,
+ 3: 1.512rem,
+ 4: 1.814rem,
+ 5: 2.177rem, //34px
+ 6: 2.613rem,
+ 7: 3.135rem,
+ 8: 3.762rem,
+ 9: 4.515rem
+);
+
+// Functional type scale for mobile and desktop
+
+$desktop-type-scale: (
+ -1: _modular-scale(0), //small text
+  0: _modular-scale(1), //body text
+  1: _modular-scale(5) //heading text
+);
+
+$mobile-type-scale: (
+
+);
+
+//************************
+// Line height scale
+//************************
+
+$line-height-base: 1.4;
+$computed-line-height: $line-height-base * 16.8px;
+
+$line-height: (
+ -1: $line-height-base,
+  0: $line-height-base,
+  1: $line-height-base * .85
+);
+
+@function line-height($level) {
+  @return map-get($line-height, $level);
+}
