@@ -49,6 +49,7 @@ Important:
 
 Future:
 - Make an API call to get goals data
+- Export budget-goals component to another file
 
 Devops / maintanance:
 - Write build scripts & document them here
