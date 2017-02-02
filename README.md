@@ -45,8 +45,10 @@ Use branches
 ### TODO:
 
 Important:
-- Make the main vue instance take a JS object to render that shit -> Allgreed on it
 - Add dynamic canvas size to make that shit responsive as hell (http://stackoverflow.com/questions/1664785/resize-html5-canvas-to-fit-window)
+
+Future:
+- Make an API call to get goals data
 
 Devops / maintanance:
 - Write build scripts & document them here
