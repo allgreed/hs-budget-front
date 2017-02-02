@@ -3,7 +3,7 @@ module.exports = function (gulp, plug, dev, dist) {
 
         var currentDest = dev() ? 'dev/js' : 'dist/js';
 
-        return gulp.src(['src/js/**/!(js-fire)*.js','!src/js/**/*.min.js','src/js/js-fire.js'])
+        return gulp.src(['src/js/**/!(main)*.js','!src/js/**/*.min.js','src/js/main.js'])
         .pipe(plug.concat('main.js'))
         .pipe(plug.size({
             title: 'JS',
@@ -11,7 +11,6 @@ module.exports = function (gulp, plug, dev, dist) {
             showTotal: false}))
 
         .pipe(dist(plug.uglify()))
-        .pipe(dist(plug.hash({template: "<%=hash %><%=ext %>"})))
         .pipe(dist(plug.size({
             title: 'JS min',
             showFiles: true,
@@ -23,8 +22,6 @@ module.exports = function (gulp, plug, dev, dist) {
             showTotal: false})))
 
         .pipe(gulp.dest(currentDest))
-        .pipe(dist(plug.hash.manifest('assets.json')))
-        .pipe(dist(gulp.dest('.')))
         ;
     };
 };

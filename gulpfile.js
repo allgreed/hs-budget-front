@@ -15,7 +15,15 @@ var config = {
 };
 
 //Loads and fetches configuration for ftp
-config.ftp.keys = require('./ftp_keys.json');
+
+try 
+{
+    config.ftp.keys = require('./ftp_keys.json');
+}
+catch (err)
+{
+    console.log(err);
+}
 
 //************************
 // Gulp init & file loading
@@ -37,19 +45,17 @@ gulp.task('dev', function() {
     //VERY NOT DRY, SHALL BE REFACTORED
     runSequence(
         ['clean-dev'],
-        ['scripts','img','styles','markup', 'misc','fonts','svg','bower-sync']
+        ['scripts','img','styles','markup', 'misc','bower-sync']
         );
 
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/markup/**/*.pug', ['markup']);
     gulp.watch('src/js/**/*.js', ['scripts']);
     gulp.watch('src/misc/*.*', {dot: true}, ['misc']);
-    gulp.watch('src/fonts/**/*', ['fonts']);
     gulp.watch(['src/img/**/*','!src/img/**/*.svg'], ['img']);
-    return gulp.watch('src/img/**/*.svg', ['svg']);
+    return gulp.watch(['src/bower_components/**/*',], ['bower-sync']);
 
 });
-
 
 gulp.task('build',function(){
     setEnv("dist");
@@ -57,7 +63,7 @@ gulp.task('build',function(){
     //VERY NOT DRY, SHALL BE REFACTORED
     runSequence(
         ['clean-dist'],
-        ['scripts','img','styles', 'misc','fonts','svg'],
+        ['scripts','img','styles', 'misc'],
         ['markup']
     );
 });
@@ -68,7 +74,7 @@ gulp.task('default', function(){
 
     runSequence(
         ['clean-dist'],
-        ['scripts','img','styles', 'misc','fonts','svg'],
+        ['scripts','img','styles', 'misc'],
         ['markup'],
         ['deploy']
         );
@@ -81,9 +87,7 @@ gulp.task('scripts', getTask('scripts'));
 gulp.task('misc', getTask('misc'));
 gulp.task('markup', getTask('markup'));
 gulp.task('styles', getTask('styles'));
-gulp.task('fonts', getTask('fonts'));
 gulp.task('img', getTask('img'));
-gulp.task('svg', getTask('svg'));
 gulp.task('bower-sync', getTask('bower-sync'));
 gulp.task('deploy', getTask('deploy'));
 

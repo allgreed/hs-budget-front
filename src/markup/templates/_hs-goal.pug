@@ -1,0 +1,16 @@
+script(type="text/template" id="template-goal")
+    .col-xs-12.col-md-3
+        .contribution
+            .contribution__description
+                h2.contribution__goal {{ text }}
+
+                .contribution__current-state
+                    label Obecnie zebrane:
+                    output {{ currentMoney }} PLN
+
+                .contribution__desired-state
+                    label Cel do osiągnięcia:
+                    output {{ neededMoney }} PLN
+
+            progress(v-bind:value="progress" max="100" v-show="false")
+            canvas(id="myChart" width="221" height="221" v-draw="progress").contribution__chart

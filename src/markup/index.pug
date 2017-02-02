@@ -1,13 +1,25 @@
--var pageTitle = 'This is development'
+-var pageTitle = 'Moneeey!'
 
 doctype html
 html(lang="pl").index
-    include partials/_head.pug
+    include essentials/_head.pug
 
-    body
+    body.background-hook
+
+        include templates/_hs-goal.pug
 
         .container
-            
-            //- Write you code here
+            header.header
+                h1.header__caption Kunsztowny budżet HSu
 
-        include partials/_scripts.pug
+            section.row#budget-goals.main
+                    hs-goal(current-money="20" needed-money="10" text="Ciastka")
+                    hs-goal(current-money="40" needed-money="100" text="Więcej ciastek")
+                    hs-goal(current-money="200" needed-money="500" text="Chlanie")
+                    hs-goal(current-money="10" needed-money="100" text="Ciastka?")
+                    hs-goal(current-money="1" needed-money="20000" text="Auto dla Wojtka")
+
+            footer.footer.row
+                p.footer__caption Nasz HS jest zajebisty!!! Footer placeholder text
+
+        include essentials/_scripts.pug

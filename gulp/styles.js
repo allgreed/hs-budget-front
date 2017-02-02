@@ -19,7 +19,6 @@ module.exports = function (gulp, plug, dev, dist) {
                 removeAll: true
             }
         })))
-        .pipe(dist(plug.hash({template: "<%=hash %><%=ext %>"})))
         .pipe(dist(plug.size({
             title: 'CSS min',
             showFiles: true,
@@ -29,8 +28,6 @@ module.exports = function (gulp, plug, dev, dist) {
             gzip: true,showFiles: true,
             showTotal: false})))
         .pipe(gulp.dest(currentDest))
-        .pipe(dist(plug.hash.manifest('assets.json')))
-        .pipe(dist(gulp.dest('.')))
         ;
 
     };

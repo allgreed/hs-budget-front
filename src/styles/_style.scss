@@ -1,0 +1,95 @@
+@mixin material-text-shadow
+{
+    text-shadow: 5px 5px 7px #000;
+}
+
+.background-hook
+{
+    &::before
+    {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: $body-bg center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    filter: blur(2px) brightness(60%) grayscale(95%);
+    z-index: -9999;
+    }
+}
+
+.header
+{
+    
+    margin-top: 3rem;
+    padding: 1rem 0;
+
+    &__caption
+    {
+        @include material-text-shadow;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 200;
+        text-align: center;
+        font-size: 3rem;   
+    }
+}
+
+.main
+{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.contribution
+{
+    text-align: center;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 1rem;
+
+    &__chart
+    {
+        margin-top: 15%;
+    }
+
+    &__description
+    {
+        background-color: rgba(0,0,0,0.3);
+        margin: -1rem;
+        padding: 1rem 0;
+        border-radius: 10px 10px 0 0;
+    }
+
+    &__goal
+    {
+        @include material-text-shadow;
+        color: $red;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    &__current-state
+    {
+        @include material-text-shadow;
+        font-size: 1.1rem;
+    }
+    &__desired-state
+    {
+        @extend .contribution__current-state;
+        margin-top: .5rem;
+    }
+}
+
+.footer
+{
+    @include material-text-shadow;
+    text-align: center;
+
+    &__caption
+    {
+        padding: 1rem 0;
+    }
+}

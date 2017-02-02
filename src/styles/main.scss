@@ -1,6 +1,18 @@
-@import 'abstract/glob';
+$red: #e25440;
+$white: #fff;
+$grey: #ccc;
+$dark-grey: #6d6d6d;
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import 'bootstrap/responsive-utilities';
+@import 'bootstrap/grid';
+
 @import 'base/glob';
-@import 'vendor/glob';
-@import 'components/glob';
-@import 'layout/glob';
-@import 'pages/glob';
+
+// Your ??? go here
+
+// Your imports go here
+@import 'style';
+
+@import 'shame';

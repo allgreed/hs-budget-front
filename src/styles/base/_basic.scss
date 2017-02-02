@@ -91,9 +91,6 @@ body {
   line-height: $line-height-base;
 
   color: $text-color;
-  background-color: $body-bg;
-
-  letter-spacing: .5px;
 }
 
 a {
@@ -119,46 +116,5 @@ img {
 
 h1 {
   font-size: unset;
+  font-weight: 400;
 }
-
-// Here it's commented out, since no horizontal rules are required
-
-// hr {
-//   margin-top:    $line-height-computed;
-//   margin-bottom: $line-height-computed;
-//   border: 0;
-//   border-top: 1px solid $hr-border;
-// }
-
-//Removes display marker
-//Commented out for same reason
-
-// summary::-webkit-details-marker {
-//   display: none
-// }
-
-// Only display content to screen readers
-// Here it's commented out, since no accessibiliy is required
-
-// .sr-only {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   padding: 0;
-//   overflow: hidden;
-//   clip: rect(0,0,0,0);
-//   border: 0;
-// }
-
-// .sr-only-focusable {
-//   &:active,
-//   &:focus {
-//     position: static;
-//     width: auto;
-//     height: auto;
-//     margin: 0;
-//     overflow: visible;
-//     clip: auto;
-//   }
-// }
