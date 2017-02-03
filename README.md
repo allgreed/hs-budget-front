@@ -46,20 +46,23 @@ Run the build system. It'll watch for hs-budget-front/src/ files changes.
 
 Serve hs-budget-front/dev locally to preview your work.
 
-## Contribution guide
+## How to contribute
 
-### Rule nr 1
+### Ideas
+Just drop'em as issues ;)
 
-> His palms are spaghetti, knees weak, arms spaghetti       
-> There's vomit on his spaghetti already: mom's spaghetti   
-> He's nervous, but on the surface he looks calm spaghetti      
-> To drop spaghetti, but he keeps on spaghetti      
-
-Don't do that...
-
-### Rule nr 2
-
-Use branches.
+### Code
+0. Prerequisites:
+    + Git basics
+    + Understanding of Github's PR
+    + ZenHub installed
+    + Expertise in a field related to your to-be contribution
+1. Find an unassigned issue
+2. Assign yourself
+3. Move the issue from icebox / backlog to in progress
+3. Create a new branch with a meaninguful name
+4. Hack it!
+5. Create a PR with a [propper description](https://help.github.com/articles/closing-issues-via-commit-messages/).
 
 ## Building
 
