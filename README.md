@@ -6,8 +6,8 @@
 
 To work with this repo you'll need to have installed:
 
-+ Nodejs
-+ NPM
++ Node.js
++ npm
 + Bower
 
 ## Instalation
