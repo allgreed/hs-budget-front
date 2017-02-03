@@ -61,30 +61,6 @@ Don't do that...
 
 Use branches.
 
-### TODO:
-
-Important:
-- Add dynamic canvas size to make that shit responsive as hell (http://stackoverflow.com/questions/1664785/resize-html5-canvas-to-fit-window)
-
-Future:
-- Make an API call to get goals data
-- Export budget-goals component to another file
-
-Devops / maintanance:
-- Write build scripts & document them here
-- Figure out deployment & document it here
-- Clean unused dev dependencies from npm
-- Remove bootstrap classes from styles and work directly on it's mixins
-
-Style:
-- Add a stinkin' favicon
-- Make this shit more stylish
-- Darken the background in Photoshop or other shit to avoid runtime css image processing
-
-Copy:
-- Write some clever overview
-- Write witty footer text
-
 ## Building
 
 
