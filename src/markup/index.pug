@@ -13,11 +13,7 @@ html(lang="pl").index
                 h1.header__caption Kunsztowny budżet HSu
 
             section.row#budget-goals.main
-                    hs-goal(current-money="20" needed-money="10" text="Ciastka")
-                    hs-goal(current-money="40" needed-money="100" text="Więcej ciastek")
-                    hs-goal(current-money="200" needed-money="500" text="Chlanie")
-                    hs-goal(current-money="10" needed-money="100" text="Ciastka?")
-                    hs-goal(current-money="1" needed-money="20000" text="Auto dla Wojtka")
+                    hs-goal(v-for="goal in goals" v-bind:current-money="goal.currentMoney" v-bind:needed-money="goal.neededMoney" v-bind:text="goal.text")
 
             footer.footer.row
                 p.footer__caption Nasz HS jest zajebisty!!! Footer placeholder text
