@@ -14,21 +14,29 @@ To work with this repo you'll need to have installed:
 
 0. Install prerequisites
 1. Clone the repo
-```sh
-    $ git clone https://github.com/hs3city/hs-budget-front.git
-```    
+
+    ```sh
+        $ git clone https://github.com/hs3city/hs-budget-front.git
+    ```    
+    
 2. Navigate to the main folder
-```sh
-    $ cd hs-budget-front
-```    
+
+    ```sh
+        $ cd hs-budget-front
+    ```    
+    
 3. Fetch npm dependencies
-```sh
-    $ npm install
-```    
+
+    ```sh
+        $ npm install
+    ```    
+    
 4. Fetch bower dependencies
-```sh
-    $ bower install
-```
+
+    ```sh
+        $ bower install
+    ```
+    
 ## Development
 
 Run the build system. It'll watch for hs-budget-front/src/ files changes.
