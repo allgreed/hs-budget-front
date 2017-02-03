@@ -42,6 +42,7 @@ To work with this repo you'll need to have installed:
 Run the build system. It'll watch for hs-budget-front/src/ files changes.
 ```sh
     $ gulp dev
+```
 
 Serve hs-budget-front/dev locally to preview your work.
 
