@@ -2,7 +2,7 @@
 
 ## Overview
 
-## Prerequisities
+## Prerequisites
 
 To work with this repo you'll need to have installed:
 
@@ -10,22 +10,25 @@ To work with this repo you'll need to have installed:
 + npm
 + Bower
 
-## Instalation
+## Setup
 
-In command line, in the desired directory type:
-
-    git clone https://github.com/hs3city/hs-budget-front.git
-    cd hs-budget-front
-    npm install
-    bower install
+0. Install prerequisites
+1. Clone the repo
+    $ git clone https://github.com/hs3city/hs-budget-front.git
+2. Navigate to the main folder
+    $ cd hs-budget-front
+3. Fetch npm dependencies
+    $ npm install
+4. Fetch bower dependencies
+    $ bower install
 
 ## Development
 
-In command line, in the repo directory type:
+Run the build system. It'll watch for hs-budget-front/src/ files changes.
 
-    gulp dev
+    $ gulp dev
 
-Then serve hs-budget-front/dev locally to preview your work
+Serve hs-budget-front/dev locally to preview your work.
 
 ## Contribution guide
 
@@ -40,7 +43,7 @@ Don't do that...
 
 ### Rule nr 2
 
-Use branches
+Use branches.
 
 ### TODO:
 
