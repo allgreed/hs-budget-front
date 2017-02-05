@@ -1,33 +1,21 @@
-//Todo -> not include helper.scss in production build
-
-module.exports = function (gulp, plug, dev, dist) {
+module.exports = function (gulp, plugins, env) {
     return function () {
-
-        var currentDest = dev() ? 'dev/css' : 'dist/css';
 
         //SASS compilation
         return gulp.src(['src/styles/*.scss'])
-        .pipe(plug.sass({
-                includePaths: ['./src/bower_components/bootstrap-sass/assets/stylesheets/']
-            }).on('error', plug.sass.logError))
-        .pipe(plug.autoprefixer({browsers: ['Safari >= 7','last 2 versions','>1% in PL'],}))
-        .pipe(plug.size({title: 'CSS',showFiles: true, showTotal: false}))
+        .pipe(plugins.sass(
+        {
+            includePaths: ['./src/bower_components/bootstrap-sass/assets/stylesheets/']
+        }).on('error', plugins.sass.logError))
 
         //CSS processing
-        .pipe(dist(plug.cssnano({
-            discardComments: {
-                removeAll: true
-            }
-        })))
-        .pipe(dist(plug.size({
-            title: 'CSS min',
-            showFiles: true,
-            showTotal: false})))
-        .pipe(dist(plug.size({
-            title: 'CSS min',
-            gzip: true,showFiles: true,
-            showTotal: false})))
-        .pipe(gulp.dest(currentDest))
+        .pipe(plugins.autoprefixer({browsers: ['last 2 versions','>1% in PL'],}))
+        .pipe(env.dist(plugins.cleanCss(
+            {
+                level: 2,
+            })))
+
+        .pipe(gulp.dest(env.dev() ? 'dev' : 'dist' + '/css'))
         ;
 
     };
