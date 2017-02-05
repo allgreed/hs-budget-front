@@ -70,8 +70,3 @@ Just drop'em as issues ;)
 
 ## Deployment
 
-
-
-## Authorship
-
-Founded, designed & developed from scratch by Allgreed
