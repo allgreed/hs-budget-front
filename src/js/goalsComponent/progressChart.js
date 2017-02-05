@@ -1,4 +1,4 @@
-function progressChart(canvas, progress)
+module.exports = function progressChart(canvas, progress)
 {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");

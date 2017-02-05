@@ -1,6 +1,7 @@
 {
   "private": true,
   "devDependencies": {
+    "browserify": "^14.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean": "^0.3.2",
@@ -25,7 +26,8 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.9",
     "run-sequence": "^1.2.2",
-    "vinyl-ftp": "^0.5.0"
+    "vinyl-ftp": "^0.5.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {}
 }
