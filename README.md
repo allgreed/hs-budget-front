@@ -7,9 +7,21 @@
 To work with this repo you'll need to have installed:
 
 + Node.js
-+ npm
++ npm (comes with Node.js)
+    
+
 + Bower
 
+    ```sh
+        $ npm i -g bower
+    ```    
+
++ gulp-cli
+
+    ```sh
+        $ npm i -g gulp-cli
+    ```    
+    
 ## Setup
 
 0. Install prerequisites
@@ -28,13 +40,13 @@ To work with this repo you'll need to have installed:
 3. Fetch npm dependencies
 
     ```sh
-        $ npm install
+        $ npm i
     ```    
     
 4. Fetch bower dependencies
 
     ```sh
-        $ bower install
+        $ bower i
     ```
     
 ## Development
@@ -45,6 +57,13 @@ Run the build system. It'll watch for hs-budget-front/src/ files changes.
 ```
 
 Serve hs-budget-front/dev locally to preview your work.
+Ex. Live-server
+
+    ```sh
+        $ npm i -g live-server
+        $ cd dev
+        $ live-server
+    ```
 
 ## How to contribute
 
