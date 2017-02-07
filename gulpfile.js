@@ -27,8 +27,9 @@ gulp.task('dev', function() {
 
     runSequence(
         ['clean-cwd'],
-        ['scripts','img','styles','markup', 'misc']
-        );
+        ['scripts','img','styles','markup', 'misc'],
+        ['end']
+    );
 
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/markup/**/*.pug', ['markup']);
@@ -46,8 +47,10 @@ gulp.task('build',function(){
     runSequence(
         ['clean-cwd'],
         ['scripts','img','styles', 'misc'],
-        ['markup']
+        ['markup'],
+        ['end']
     );
+
 });
 
 gulp.task('default', function(){
@@ -58,7 +61,8 @@ gulp.task('default', function(){
         ['clean-cwd'],
         ['scripts','img','styles', 'misc'],
         ['markup'],
-        ['deploy']
+        ['deploy'],
+        ['end']
         );
 });
 
@@ -73,10 +77,23 @@ gulp.task('styles', getTask('styles'));
 gulp.task('img', getTask('img'));
 gulp.task('deploy', getTask('deploy'));
 
+gulp.task('end', function()
+{
+    if(env.dev())
+    {
+        //dev stuff here
+    }
+    else
+    {
+        require('del').sync(["./cb-manifest.json"]);
+    }
+});
+
 gulp.task('clean-cwd', function()
 {
-    return require('del').sync(["./" + env.dev() ? "dev" : "dist" + "/**"]);
+    return require('del').sync(["./" + (env.dev() ? "dev" : "dist") + "/**"]);
 });
+
 gulp.task('list', function()
 {
     console.log(plugins);

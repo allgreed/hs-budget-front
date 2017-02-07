@@ -6,17 +6,20 @@ var config =
     }
 };
 
-try 
-{
-    config.ftp.keys = require('./ftp_keys.json');
-}
-catch (err)
-{
-    console.log(err);
-}
-
 module.exports = function (gulp, plugins, env) {
     return function () {
+
+        try 
+        {
+            config.ftp.keys = require('./ftp_keys.json');
+        }
+        catch (err)
+        {
+            if(env.dist())
+            {
+                console.log(err);
+            }
+        }        
 
         function getFtpConnection() 
         {  
