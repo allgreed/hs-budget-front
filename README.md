@@ -51,17 +51,34 @@ To work with this repo you'll need to have installed:
     
 ## Development
 
-Run the build system. It'll watch for hs-budget-front/src/ files changes.
-```sh
-    $ gulp dev
-```
+1. Run the build system in development mode
 
-Serve hs-budget-front/dev locally to preview your work.
-Ex. Live-server
+    ```sh
+        $ gulp dev
+    ```
+**Do please note:** Once inited the build system watches for changes
+
+2. Serve hs-budget-front/dev locally to preview your work
+
+### I'm a noob, can't serve for shit :c
+
+That's ok, dawng, just:
+
+1. Install-live server globally
 
     ```sh
         $ npm i -g live-server
+    ```
+
+2. Enter development catalogue
+
+    ```sh
         $ cd dev
+    ```
+
+3. Start the server
+
+    ```sh
         $ live-server
     ```
 
