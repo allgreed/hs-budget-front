@@ -1,25 +1,50 @@
-module.exports = function (gulp, plug, dev, dist) {
-    return function () {
+module.exports = function (gulp, plugins, env) {
+    return function() 
+    {
+        plugins.fs = require('fs');
 
-        var currentDest = dev() ? 'dev/' : 'dist/';
+        var cacheAliases =
+        {
+            "main.css": "",
+            "bundle.js": ""
+        };
+
+        try
+        {
+            cacheAliases = JSON.parse(plugins.fs.readFileSync('cb-manifest.json', 'utf8'));
+        }
+        catch (err)
+        {
+            if(env.dist())
+            {
+                console.log(err);
+            }
+        }
 
         //PUG compiling
         return gulp.src('src/markup/**/[!_]*.pug')
-        .pipe(plug.pug({pretty: true})).on('error',
-                plug.notify.onError(function (error) {
-            return 'Jade error\n' + error;
-            }))
-        .pipe(plug.size({title: 'HTML'}))
+        .pipe(plugins.pug( {pretty: true} ))
+            .on('error', plugins.notify.onError(function (error) 
+                {
+                    return 'Pug error\n' + error;
+                }))
 
         // HTML processing
-        .pipe(dist(plug.processhtml()))
-
-        .pipe(dist(plug.htmlmin({
+        .pipe(env.dist(plugins.htmlmin(
+        {
             collapseWhitespace: true,
-            removeComments: true})))
-        .pipe(dist(plug.size({title: 'HTML min'})))
-        .pipe(dist(plug.size({title: 'HTML min',gzip: true}))) 
-        .pipe(gulp.dest(currentDest))
+            removeComments: true,
+            sortAttributes: true,
+            sortClassName: true,
+            collapseInlineTagWhitespace: true,
+        })))
+
+        // Accounting for cache busting
+        .pipe(env.dist(plugins.replace('main.css', cacheAliases["main.css"])))
+        .pipe(env.dist(plugins.replace('bundle.js', cacheAliases["bundle.js"])))
+
+        // HTML output
+        .pipe(gulp.dest(env.dev() ? 'dev' : 'dist' + '/'))
         ;
     };
 };

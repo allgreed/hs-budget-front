@@ -26,7 +26,7 @@ ftp_keys.json
 # Shall be removed after moving to a self-hosted repos
 
 #cache-busting manifest
-assets.json
+cb-manifest.json
 
 ####################################
 # Custom ignores

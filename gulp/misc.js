@@ -1,8 +1,5 @@
-module.exports = function (gulp, plug, dev) {
+module.exports = function (gulp, plugins, env) {
     return function () {
-        
-        var currentDest = dev() ? 'dev/' : 'dist/';
-
-        gulp.src('src/misc/**', {dot: true}).pipe(gulp.dest(currentDest));
+        return gulp.src('src/misc/**', {dot: true}).pipe(gulp.dest(env.dev() ? 'dev/' : 'dist/'));
     };
 };
