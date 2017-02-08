@@ -6,6 +6,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.3.2",
+    "gulp-envify": "^1.0.0",
     "gulp-environments": "^0.1.1",
     "gulp-exit": "0.0.2",
     "gulp-hash": "^3.1.0",
