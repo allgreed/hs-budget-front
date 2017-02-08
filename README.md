@@ -56,7 +56,7 @@ To work with this repo you'll need to have installed:
     ```sh
         $ gulp dev
     ```
-**Do please note:** Once inited the build system watches for changes
+*Do please note:* Once inited the build system watches for changes
 
 2. Serve hs-budget-front/dev locally to preview your work
 
@@ -64,13 +64,13 @@ To work with this repo you'll need to have installed:
 
 That's ok, dawng, just:
 
-1. Install-live server globally
+1. Install live-server globally
 
     ```sh
         $ npm i -g live-server
     ```
 
-2. Enter development catalogue
+2. Enter development folder
 
     ```sh
         $ cd dev
@@ -102,7 +102,11 @@ Just drop'em as issues ;)
 
 ## Building
 
-
+```sh
+    $ gulp build
+```
+    
+Resulting build will be located in _/dist_ folder
 
 ## Deployment
 
