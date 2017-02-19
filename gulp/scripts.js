@@ -12,6 +12,7 @@ module.exports = function (gulp, plugins, env) {
         .pipe(plugins.vinylBuffer())
 
         // Scripts proccessing
+        .pipe(env.dist(plugins.replace('development', 'production')))
         .pipe(env.dist(plugins.uglify()))
 
         // Cache busting
