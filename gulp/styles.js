@@ -19,7 +19,7 @@ module.exports = function (gulp, plugins, env) {
         .pipe(env.dist(plugins.hash({template: "<%=hash %><%=ext %>"})))
 
         // Styles output
-        .pipe(gulp.dest(env.dev() ? 'dev' : 'dist' + '/css'))
+        .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/css'))
 
         // Cache busting manifest
         .pipe(env.dist(plugins.hash.manifest('cb-manifest.json')))
