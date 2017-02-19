@@ -78,5 +78,19 @@ module.exports = function progressChart(canvas, progress)
             });  
         }  
     };
-    this.animate(progress, 0);
-}
+
+    this.init = function()
+    {
+        this.animate(progress, 0);
+    }
+
+    // DOM readyness checker
+    if(document.readyState === "complete") 
+    {
+        this.init();
+    }
+    else 
+    {
+        window.addEventListener("onload", this.init(), false);
+    }
+};
