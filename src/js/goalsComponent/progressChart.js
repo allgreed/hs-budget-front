@@ -79,4 +79,4 @@ module.exports = function progressChart(canvas, progress)
         }  
     };
     this.animate(progress, 0);
-}
+};
