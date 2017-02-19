@@ -15,12 +15,5 @@ module.exports = {
             var progressChart = require('./progressChart.js');
             new progressChart(canvas, binding.value);
         }
-    },
-    methods:
-    {
-        adjustCanvas: function()
-        {
-
-        }
-    },  
+    }
 };
