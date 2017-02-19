@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, env) {
             '!src/img/sprite.svg',
             '!src/img/svg-source/**/*'])
         .pipe(env.dist(plugins.imagemin()))
-        .pipe(gulp.dest(env.dev() ? 'dev' : 'dist' + '/img'))
+        .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/img'))
         ;        
 
     };
