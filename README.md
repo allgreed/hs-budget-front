@@ -88,12 +88,16 @@ That's ok, dawng, just:
 Just drop'em as issues ;)
 
 ### Code
-0. Prerequisites:
-    + Git basics
-    + Understanding of Github's PR
-    + ZenHub installed
-    + Expertise in a field related to your to-be contribution
-1. Find an unassigned issue
+
+#### Prerequisites
++ Git basics
++ Understanding of Github's PR
++ ZenHub installed
++ Expertise in a field related to your to-be contribution
+
+#### How to:
+
+1. Find an unassigned issue / issue label with "help needed"
 2. Assign yourself
 3. Move the issue from icebox / backlog to in progress
 3. Create a new branch with a meaninguful name
