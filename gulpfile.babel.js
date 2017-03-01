@@ -1,6 +1,5 @@
 import gulp from 'gulp';
-import $ from './gulp/plugins.js';
-import { env } from './gulp/plugins.js';
+import $, { env } from './gulp/plugins.js';
 
 //************************
 //      Helper tasks
@@ -20,12 +19,6 @@ export function setDevEnv(cb)
 export function setProdEnv(cb)
 {
     $.environments.current(env.dist);
-    cb();
-}
-
-export function test(cb)
-{
-    console.log("Test");
     cb();
 }
 
@@ -52,7 +45,7 @@ export function watch()
 //      Main tasks
 //************************
 
-var main = gulp.series
+export const main = gulp.series
 (
     cleanCWD,
     gulp.parallel
@@ -64,11 +57,8 @@ var main = gulp.series
     ),
     markup
 );
-gulp.task('main', main);
 
-var build = gulp.series(setProdEnv, main);
-gulp.task('build', build);
+export const build = gulp.series(setProdEnv, main);
 
-var dev = gulp.series(setDevEnv, main, watch);
-gulp.task('dev', dev);
-gulp.task('default', dev);
+export const dev = gulp.series(setDevEnv, main, watch);
+export default dev;

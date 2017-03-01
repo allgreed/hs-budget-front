@@ -1,4 +1,4 @@
-// This shit is kinda depreceated but I'll keep it dunno why
+// This shit is kinda depreceated and shall be moved to Allgreed-generator
 
 var config = 
 {

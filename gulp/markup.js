@@ -1,11 +1,10 @@
 import gulp from 'gulp';
-import $ from './plugins.js';
-import { env } from './plugins.js';
+import $, { env } from './plugins.js';
 
 export default function markup() 
 {
 
-    var cacheAliases =
+    let cacheAliases =
     {
         "main.css": "",
         "bundle.js": ""
@@ -26,10 +25,7 @@ export default function markup()
     //PUG compiling
     gulp.src('src/markup/**/[!_]*.pug')
     .pipe($.pug( {pretty: true} ))
-        .on('error', $.notify.onError(function (error) 
-            {
-                return 'Pug error\n' + error;
-            }))
+        .on('error', $.notify.onError( (error)  => 'Pug error\n' + error))
 
     // HTML processing
     .pipe(env.dist($.htmlmin(

@@ -1,6 +1,5 @@
 import gulp from 'gulp';
-import $ from './plugins.js';
-import { env } from './plugins.js';
+import $, { env } from './plugins.js';
 
 export default function misc() 
 {

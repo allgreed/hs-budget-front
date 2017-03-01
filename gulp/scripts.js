@@ -1,10 +1,9 @@
 import gulp from 'gulp';
-import $ from './plugins.js';
-import { env } from './plugins.js';
+import $, { env } from './plugins.js';
 
 export default function scripts() 
 {
-        var entryPoint = "./src/js/app.js";
+        const entryPoint = "./src/js/app.js";
         
         // Scripts bundling
         return $.browserify(entryPoint)
