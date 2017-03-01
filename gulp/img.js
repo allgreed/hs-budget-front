@@ -1,13 +1,13 @@
-module.exports = function (gulp, plugins, env) {
-    return function () {
+import gulp from 'gulp';
+import $, { env } from './plugins.js';
 
-        return gulp.src([
-            'src/img/**/*',
-            '!src/img/sprite.svg',
-            '!src/img/svg-source/**/*'])
-        .pipe(env.dist(plugins.imagemin()))
-        .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/img'))
-        ;        
-
-    };
-};
+export default function img() 
+{
+    return gulp.src([
+        'src/img/**/*',
+        '!src/img/sprite.svg',
+        '!src/img/svg-source/**/*'])
+    .pipe(env.dist($.imagemin()))
+    .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/img'))
+    ;
+}

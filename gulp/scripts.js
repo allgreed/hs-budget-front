@@ -1,30 +1,28 @@
-var entryPoint = "./src/js/app.js";
+import gulp from 'gulp';
+import $, { env } from './plugins.js';
 
-module.exports = function (gulp, plugins, env) {
-    return function () {
-
-        plugins.browserify = require('browserify');
-
+export default function scripts() 
+{
+        const entryPoint = "./src/js/app.js";
+        
         // Scripts bundling
-        return plugins.browserify(entryPoint)
+        return $.browserify(entryPoint)
         .bundle()
-        .pipe(plugins.vinylSourceStream('bundle.js'))
-        .pipe(plugins.vinylBuffer())
+        .pipe($.vinylSourceStream('bundle.js'))
+        .pipe($.vinylBuffer())
 
         // Scripts proccessing
-        .pipe(env.dist(plugins.replace('development', 'production')))
-        .pipe(env.dist(plugins.uglify()))
+        .pipe(env.dist($.replace('development', 'production')))
+        .pipe(env.dist($.uglify()))
 
         // Cache busting
-        .pipe(env.dist(plugins.hash({template: "<%=hash %><%=ext %>"})))
+        .pipe(env.dist($.hash({template: "<%=hash %><%=ext %>"})))
 
         // Styles output
         .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/js'))
 
         // Cache busting manifest
-        .pipe(env.dist(plugins.hash.manifest('cb-manifest.json')))
+        .pipe(env.dist($.hash.manifest('cb-manifest.json')))
         .pipe(env.dist(gulp.dest('.')))
-        
         ;
-    };
-};
+}

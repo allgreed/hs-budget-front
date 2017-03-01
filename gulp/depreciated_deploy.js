@@ -1,3 +1,5 @@
+// This shit is kinda depreceated and shall be moved to Allgreed-generator
+
 var config = 
 {
     ftp: 
