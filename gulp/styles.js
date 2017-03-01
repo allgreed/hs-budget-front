@@ -1,31 +1,32 @@
-module.exports = function (gulp, plugins, env) {
-    return function () {
+import gulp from 'gulp';
+import $ from './plugins.js';
+import { env } from './plugins.js';
 
-        // SASS compilation
-        return gulp.src(['src/styles/*.scss'])
-        .pipe(plugins.sass(
+export default function styles() 
+{
+    // SASS compilation
+    return gulp.src(['src/styles/*.scss'])
+    .pipe($.sass(
+    {
+        includePaths: ['./src/bower_components/bootstrap-sass/assets/stylesheets/']
+    }).on('error', $.sass.logError))
+
+    // CSS processing
+    .pipe($.autoprefixer({browsers: ['last 2 versions','>1% in PL'],}))
+    .pipe(env.dist($.cleanCss(
         {
-            includePaths: ['./src/bower_components/bootstrap-sass/assets/stylesheets/']
-        }).on('error', plugins.sass.logError))
+            level: 2,
+        })))
 
-        // CSS processing
-        .pipe(plugins.autoprefixer({browsers: ['last 2 versions','>1% in PL'],}))
-        .pipe(env.dist(plugins.cleanCss(
-            {
-                level: 2,
-            })))
+    // Cache busting
+    .pipe(env.dist($.hash({template: "<%=hash %><%=ext %>"})))
 
-        // Cache busting
-        .pipe(env.dist(plugins.hash({template: "<%=hash %><%=ext %>"})))
+    // Styles output
+    .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/css'))
 
-        // Styles output
-        .pipe(gulp.dest((env.dev() ? 'dev' : 'dist') + '/css'))
+    // Cache busting manifest
+    .pipe(env.dist($.hash.manifest('cb-manifest.json')))
+    .pipe(env.dist(gulp.dest('.')))
 
-        // Cache busting manifest
-        .pipe(env.dist(plugins.hash.manifest('cb-manifest.json')))
-        .pipe(env.dist(gulp.dest('.')))
-
-        ;
-
-    };
-};
+    ;
+}

@@ -1,3 +1,5 @@
+// This shit is kinda depreceated but I'll keep it dunno why
+
 var config = 
 {
     ftp: 
