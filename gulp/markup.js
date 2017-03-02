@@ -4,23 +4,24 @@ import $, { env } from './plugins.js';
 export default function markup() 
 {
 
-    let cacheAliases =
+    const cacheAliases = ( () =>
     {
-        "main.css": "",
-        "bundle.js": ""
-    };
-
-    try
-    {
-        cacheAliases = JSON.parse($.fs.readFileSync('cb-manifest.json', 'utf8'));
-    }
-    catch (err)
-    {
-        if(env.dist())
+        try
         {
-            console.log(err);
+            return JSON.parse($.fs.readFileSync('cb-manifest.json', 'utf8'));
         }
-    }
+        catch (err)
+        {
+            if(env.dist())
+            {
+                console.log(err);
+            }
+            return {
+                "main.css": "main.css",
+                "bundle.js": "bundle.js"
+            };
+        }
+    })();
 
     //PUG compiling
     gulp.src('src/markup/**/[!_]*.pug')
