@@ -4,9 +4,9 @@
 
 ## Prerequisites
 
-To work with this repo you'll need to have installed:
+To begin you'll need to have installed:
 
-+ Node.js
++ [Node.js](https://nodejs.org/en/)
 + npm (comes with Node.js)
     
 
@@ -24,7 +24,6 @@ To work with this repo you'll need to have installed:
     
 ## Setup
 
-0. Install prerequisites
 1. Clone the repo
 
     ```sh
@@ -37,18 +36,12 @@ To work with this repo you'll need to have installed:
         $ cd hs-budget-front
     ```    
     
-3. Fetch npm dependencies
+3. Fetch dependencies
 
     ```sh
-        $ npm i
+        $ npm i && bower i
     ```    
-    
-4. Fetch bower dependencies
 
-    ```sh
-        $ bower i
-    ```
-    
 ## Development
 
 1. Run the build system in development mode
@@ -84,10 +77,15 @@ That's ok, dawng, just:
 
 ## How to contribute
 
-### Ideas
-Just drop'em as issues ;)
+### Submit ideas
+- Just drop'em as issues ;)
 
-### Code
+### Look for bugs
+1. Run the app in development mode
+2. Try strange use cases
+3. When you find a bug - submit an issue.
+
+### Write code
 
 #### Prerequisites
 + Git basics
