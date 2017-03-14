@@ -82,7 +82,7 @@ module.exports = function progressChart(canvas, progress)
     this.init = function()
     {
         this.animate(progress, 0);
-    }
+    };
 
     // DOM readyness checker
     if(document.readyState === "complete") 
