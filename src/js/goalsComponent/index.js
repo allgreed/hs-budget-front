@@ -2,7 +2,7 @@ module.exports = {
     template: document.getElementById("template-goals").innerHTML,
     data: function()
     {
-        var link = 'http://localhost:8888';
+        var link = 'http://allgreed.pythonanywhere.com/';
 
         this.$http.get(link).then(
 
