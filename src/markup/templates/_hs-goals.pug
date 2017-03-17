@@ -1,3 +1,4 @@
 script(type="text/template" id="template-goals")
     section.row.main
-        hs-goal(v-for="goal in goals" v-bind:current-money="goal.currentMoney" v-bind:needed-money="goal.neededMoney" v-bind:text="goal.text")
+        hs-goal(v-for="goal in goals" v-bind:current-money="goal.currentMoney" v-bind:needed-money="goal.neededMoney" v-bind:text="goal.text"
+           v-bind:key="goal.text")
